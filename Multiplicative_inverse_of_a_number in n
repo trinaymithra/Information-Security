@@ -1,0 +1,7 @@
+#Multiplicative inverse of a number in Zn
+
+n=int(input("Enter 'n':"))
+num = int(input("Enter the number for which multiplicative inverse has to be calculated: "))
+for i in range(n+1) :
+	if (i*num - 1) % n == 0 :
+		print(i)
