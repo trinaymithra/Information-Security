@@ -3,7 +3,7 @@ import sympy as sp
 def factorization_of_n (n) :
 #returns a dictionary with prime factorization of n
 
-  da = dict()
+  	da = dict()
 	prime_list = sp.primefactors(n)
 	prime_list = [int(i) for i in prime_list]
 	for i in prime_list :
