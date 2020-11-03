@@ -1,7 +1,11 @@
+def inverse_of_n (num,n) :
 #Multiplicative inverse of a number in Zn
 
-n=int(input("Enter 'n':"))
-num = int(input("Enter the number for which multiplicative inverse has to be calculated: "))
-for i in range(n+1) :
-	if (i*num - 1) % n == 0 :
-		print(i)
+	for i in range(n+1) :
+		if i*num % n == 1 :
+			print(i)
+			break
+
+num = int(input("Enter the number for which inverse has to be calculated: "))
+n=int(input("Enter 'n': "))
+inverse_of_n(num, n)
