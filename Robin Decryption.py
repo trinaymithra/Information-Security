@@ -1,4 +1,5 @@
 def rdec(a,b,key) :
+    #refer chinese remainder theorem file to check how crt works
     p1=crt([a[0],b[0]],key)
     p2=crt([a[0],b[1]],key)
     p3=crt([a[1],b[0]],key)
