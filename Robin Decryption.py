@@ -1,3 +1,30 @@
+def inverse_of_n (num,n) :
+#Multiplicative inverse of a number in Zn
+
+    for i in range(n+1) :
+        if i*num % n == 1 :
+            return i
+
+
+def crt(a,m) :
+    M=1
+    for ele in m :
+        M=M*ele
+    Mi=[]
+    for ele in m :
+        Mi.append(int(M/ele))
+    Mi_inverse = []
+    for i in range(len(Mi)) :
+        Mi_inverse.append(inverse_of_n(Mi[i],m[i]))
+    x=0
+    for i in range(len(a)) :
+        x=x+(a[i]*Mi[i]*Mi_inverse[i])
+    return x%M
+
+a=[int(i) for i in input("Enter all 'a's: ").split()]
+m=[int(i) for i in input("Enter all 'm's: ").split()]
+print(crt(a,m))
+
 def rdec(a,b,key) :
     #refer chinese remainder theorem file to check how crt works
     p1=crt([a[0],b[0]],key)
@@ -9,7 +36,8 @@ def rdec(a,b,key) :
     ps = [p1,p2,p3,p4]
     return ps
     
-c,p,q = [int(i) for i in input("Enter c,p,q values: ").split()]
+PT,p,q = [int(i) for i in input("Enter c,p,q values: ").split()]
+c = (PT**2) % (p*q)
 a = c**((p+1)/4)
 a1 = a % p
 a2 = -a % p
